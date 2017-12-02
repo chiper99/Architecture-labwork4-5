@@ -56,7 +56,7 @@ int getadress(char *path) //возвращает адрес, а так же пр
    size_t n;
    int adress;
    struct file *f;
-   f = filp_open(path,O_RDONLY,0)                   //открытие файла
+   f = filp_open(path,O_RDONLY,0);                   //открытие файла
    int SizeBuff = vfs_llseek(f,(off_t)0,SEEK_END);  //узнаём размер файла
    char *Buff = vmalloc(SizeBuff+1);    	 		 //выделяем память под файл 
    char *str1,str2[10];                         	  //если у вас длина адреса больше чем 7-8 символов увеличивайте размер str2
